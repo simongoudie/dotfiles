@@ -18,8 +18,9 @@ filetype plugin indent on       " load file type plugins + indentation
 let mapleader=","
 
 " Open/load global vimrc
-nnoremap <leader>v <C-w><C-s><C-l>:e ~/Dropbox/Programs/Vim/vimrc<cr>
 nnoremap <leader>s :source $MYVIMRC
+nnoremap <leader>v <C-w><C-s><C-l>:e ~/Dropbox/Programs/dotfiles/vimrc<cr>
+nnoremap <leader>b <C-w><C-s><C-l>:e ~/Documents/Dropbox/Programs/dotfiles/vimrc<cr>
 
 " Set encoding
 set encoding=utf-8
