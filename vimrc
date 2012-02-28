@@ -22,6 +22,11 @@ nnoremap <leader>s :source $MYVIMRC
 nnoremap <leader>v <C-w><C-s><C-l>:e ~/Dropbox/Programs/dotfiles/vimrc<cr>
 nnoremap <leader>b <C-w><C-s><C-l>:e ~/Documents/Dropbox/Programs/dotfiles/vimrc<cr>
 
+" NERDTree functions
+nnoremap <leader>n :NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == 'primary') | q | endif
+
 " Set encoding
 set encoding=utf-8
 
@@ -52,11 +57,15 @@ set hidden
   nnoremap  ; :
   map Q <nop>
 
-" Ctrl move keys to move between buffers
+" Ctrl and shift move keys to move between buffers
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
-nnoremap J <C-w>j<C-w>_
-nnoremap K <C-w>k<C-w>_
+map <C-H> <C-W>h<C-W>_
+map <C-L> <C-W>l<C-W>_
+" nnoremap J <C-w>j<C-w>_
+" nnoremap K <C-w>k<C-w>_
+" nnoremap H <C-w>h<C-w>_
+" nnoremap L <C-w>L<C-w>_
 
 " Splitting buffers
 nnoremap <silent> <C-n> <C-w>n<C-w>_
