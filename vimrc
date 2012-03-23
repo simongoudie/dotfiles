@@ -23,8 +23,8 @@ nnoremap <leader>v <C-w><C-s><C-l>:e ~/Dropbox/Programs/dotfiles/vimrc<cr>
 nnoremap <leader>b <C-w><C-s><C-l>:e ~/Documents/Dropbox/Programs/dotfiles/vimrc<cr>
 
 " NERDTree functions
-nnoremap <leader>n :NERDTree
-autocmd vimenter * if !argc() | NERDTree | endif
+nnoremap <leader>n :NERDTree <cr>
+" autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == 'primary') | q | endif
 
 " Set encoding
@@ -42,30 +42,42 @@ map <F11> :let &background = ( &background == "dark" ? "light" : "dark" ) <CR>
 " Buffers hide, not close
 set hidden
 
-" scrap the arrow keys!
+" scrap the arrow keys! (resize buffer)
   inoremap  <Up>     <NOP>
   inoremap  <Down>   <NOP>
   inoremap  <Left>   <NOP>
   inoremap  <Right>  <NOP>
-  noremap   <Up>     <NOP>
-  noremap   <Down>   <NOP>
-  noremap   <Left>   <NOP>
-  noremap   <Right>  <NOP>
-  inoremap  <F1>     <ESC>
-
-" Make things a bit nicer 
-  nnoremap  ; :
-  map Q <nop>
+"  noremap   <Up>     <NOP>
+"  noremap   <Down>   <NOP>
+"  noremap   <Left>   <NOP>
+"  noremap   <Right>  <NOP>
+"  inoremap  <F1>     <ESC>
+nnoremap <left>  :3wincmd <<cr>
+nnoremap <right> :3wincmd ><cr>
+nnoremap <up>    :3wincmd +<cr>
+nnoremap <down>  :3wincmd -<cr>
+inoremap <c-left> <C-W>h<C-W>_
+inoremap <c-right> <C-W>l<C-W>_
+inoremap <c-up> <C-W>k<C-W>_
+inoremap <c-down> <C-W>j<C-W>_
 
 " Ctrl and shift move keys to move between buffers
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
-" nnoremap J <C-w>j<C-w>_
-" nnoremap K <C-w>k<C-w>_
+nnoremap J <C-w>j<C-w>_
+nnoremap K <C-w>k<C-w>_
 " nnoremap H <C-w>h<C-w>_
 " nnoremap L <C-w>L<C-w>_
+
+" Change where splits appear
+  set splitbelow
+  set splitright
+
+" Make things a bit nicer 
+  nnoremap  ; :
+  map Q <nop>
 
 " Splitting buffers
 nnoremap <silent> <C-n> <C-w>n<C-w>_
@@ -88,6 +100,9 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 set backspace=2			            " more powerful backspaces (?)
 set autoindent                  " autoindent
 "set nowrap			                " don't wrap lines
+"set wrap                        "wrap lines
+set formatoptions=1             " ??? format options
+set lbr                         " virtual line breaks?
 
 " DON'T keep a backup file
 set nobackup
