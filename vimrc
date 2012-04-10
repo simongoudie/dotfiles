@@ -4,9 +4,6 @@
 " Start pathogen
 call pathogen#infect()
 
-" Use Vim settings, rather than Vi settings (much better!).
-set nocompatible		            " This must be first
-
 " Set status line details
 set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
@@ -14,13 +11,24 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [L
 " Plugin stuff
 filetype plugin indent on       " load file type plugins + indentation
 
-" Set leader to comm
+" Set leader to comma
 let mapleader=","
+
+" Local dirs
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
 
 " Open/load global vimrc
 nnoremap <leader>s :source $MYVIMRC
 nnoremap <leader>v <C-w><C-s><C-l>:e ~/Dropbox/Programs/dotfiles/vimrc<cr>
 nnoremap <leader>b <C-w><C-s><C-l>:e ~/Documents/Dropbox/Programs/dotfiles/vimrc<cr>
+
+" Open Markdown reference file
+nnoremap <leader>m <C-w><C-s><C-l>:e ~/Dropbox/Programs/dotfiles/MDRef.txt<cr>
+nnoremap <leader>d <C-w><C-s><C-l>:e ~/Documents/Dropbox/Programs/dotfiles/MDRef.txt<cr>
+
+" Open current file in Marked
+:nnoremap <leader>p :silent !open -a Marked.app '%:p'<cr>
 
 " NERDTree functions
 nnoremap <leader>n :NERDTree <cr>
