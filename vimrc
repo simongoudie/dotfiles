@@ -13,7 +13,7 @@ endif
 
 " Set status line details
 set laststatus=2
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [%Y]\ [B%n]\ [Line:%l/%L]\ [Col:%c%V]
 
 " Plugin stuff
 filetype plugin indent on       " load file type plugins + indentation
@@ -24,6 +24,15 @@ let mapleader=","
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
+
+" Spellcheck on
+set spell
+set spelllang=en
+
+" Larger windows window
+if has("windows")
+    set lines=50 columns=100
+endif
 
 " Open/load global vimrc
 nmap <silent> <leader>v <C-w><C-s><C-l>:e $DROPBOX/Programs/dotfiles/vimrc<CR>
@@ -117,10 +126,10 @@ set relativenumber
 set tabstop=4 shiftwidth=4      " a tab is four spaces
 set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
-set backspace=2			            " more powerful backspaces (?)
+set backspace=2			        " more powerful backspaces (?)
 set autoindent                  " autoindent
-"set nowrap			                " don't wrap lines
-"set wrap                        "wrap lines
+"set nowrap			            " don't wrap lines
+"set wrap                       "wrap lines
 set formatoptions=1             " ??? format options
 set lbr                         " virtual line breaks?
 
@@ -141,9 +150,11 @@ inoremap jj <ESC>
 inoremap jk <ESC>
 inoremap KJ <ESC>
 
-" Somehow fix movement keys
+" Move by screen lines, not real ones 
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " Create lines staying in Normal Mode
 nnoremap <silent> zj o<Esc>	
@@ -154,6 +165,9 @@ nnoremap <silent> zk O<Esc>
 :command Wq wq
 :command W w
 :command Q q
+
+" Clear highlights
+nmap <silent> <leader>h :nohlsearch<CR>
 
 " Change errors to visual
 set visualbell
