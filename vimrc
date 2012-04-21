@@ -99,7 +99,11 @@ endif
 
 " Set line numbers or relative line numbers
 " set number
-set relativenumber
+if version >= 730
+    set relativenumber
+else 
+    set number
+endif
 
 " Tab and indent  setting
 set tabstop=4 shiftwidth=4      " a tab is four spaces
