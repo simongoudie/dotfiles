@@ -120,7 +120,7 @@ endif
 
 " Set line numbers or relative line numbers
 " set number
-if version >= 730
+if version >= 703
     set relativenumber
 else 
     set number
