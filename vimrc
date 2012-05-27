@@ -33,9 +33,9 @@ set spell
 set spelllang=en
 
 " Larger windows window
-if has("windows")
-    set lines=50 columns=100
-endif
+"if has("windows")
+"    set lines=50 columns=100
+"endif
 
 " Open/load global vimrc
 nmap <silent> <leader>v <C-w><C-s><C-l>:e $DROPBOX/Programs/dotfiles/vimrc<CR>
