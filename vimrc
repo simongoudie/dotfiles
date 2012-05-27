@@ -1,15 +1,15 @@
-
 " Simon's common vimrc file - for Mac, Windows and *nix
 
 " Start pathogen
 call pathogen#infect()
 
 " Set $DROPBOX directory
-if has("windows")
-    let $DROPBOX = "~/Documents/Dropbox"
-else
-    let $DROPBOX = "~/Dropbox"
-endif
+let $DROPBOX = "~/Dropbox"
+"if has("windows")
+"    let $DROPBOX = "~/Documents/Dropbox"
+"else
+"   let $DROPBOX = "~/Dropbox"
+"endif
 
 " Set status line details
 set laststatus=2
@@ -24,6 +24,9 @@ let mapleader=","
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
+
+" But don't keep a backup file
+set nobackup
 
 " Spellcheck on
 set spell
@@ -40,13 +43,6 @@ nmap <silent> <leader>s :so $MYVIMRC<CR>
 
 " Open Markdown reference file
 nnoremap <leader>m <C-w><C-s><C-l>:e $DROPBOX/Programs/dotfiles/MDRef.txt<cr>
-
-"nnoremap <leader>v <C-w><C-s><C-l>:e ~/Dropbox/Programs/dotfiles/vimrc<cr>
-"nnoremap <leader>b <C-w><C-s><C-l>:e ~/Documents/Dropbox/Programs/dotfiles/vimrc<cr>
-
-" Open Markdown reference file
-"nnoremap <leader>m <C-w><C-s><C-l>:e ~/Dropbox/Programs/dotfiles/MDRef.txt<cr>
-"nnoremap <leader>d <C-w><C-s><C-l>:e ~/Documents/Dropbox/Programs/dotfiles/MDRef.txt<cr>
 
 " Open current file in Marked
 :nnoremap <leader>p :silent !open -a Marked.app '%:p'<cr>
@@ -72,15 +68,10 @@ map <F11> :let &background = ( &background == "dark" ? "light" : "dark" ) <CR>
 set hidden
 
 " scrap the arrow keys! (resize buffer)
-  inoremap  <Up>     <NOP>
-  inoremap  <Down>   <NOP>
-  inoremap  <Left>   <NOP>
-  inoremap  <Right>  <NOP>
-"  noremap   <Up>     <NOP>
-"  noremap   <Down>   <NOP>
-"  noremap   <Left>   <NOP>
-"  noremap   <Right>  <NOP>
-"  inoremap  <F1>     <ESC>
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
 nnoremap <left>  :3wincmd <<cr>
 nnoremap <right> :3wincmd ><cr>
 nnoremap <up>    :3wincmd +<cr>
@@ -95,18 +86,18 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
-nnoremap J <C-w>j<C-w>_
-nnoremap K <C-w>k<C-w>_
+"nnoremap J <C-w>j<C-w>_
+"nnoremap K <C-w>k<C-w>_
 " nnoremap H <C-w>h<C-w>_
 " nnoremap L <C-w>L<C-w>_
 
 " Change where splits appear
-  set splitbelow
-  set splitright
+set splitbelow
+set splitright
 
 " Make things a bit nicer 
-  nnoremap  ; :
-  map Q <nop>
+nnoremap  ; :
+map Q <nop>
 
 " Splitting buffers
 nnoremap <silent> <C-n> <C-w>n<C-w>_
@@ -119,7 +110,6 @@ if has('mouse')
 endif
 
 " Set line numbers or relative line numbers
-" set number
 if version >= 703
     set relativenumber
 else 
@@ -136,9 +126,6 @@ set autoindent                  " autoindent
 "set wrap                       "wrap lines
 set formatoptions=1             " ??? format options
 set lbr                         " virtual line breaks?
-
-" DON'T keep a backup file
-set nobackup
 
 " Save on focus loss
 au FocusLost * silent! :wa
@@ -182,4 +169,3 @@ set hlsearch       " highlight matches
 set incsearch      " incremental searching
 set ignorecase     " searches are case insensitive...
 set smartcase      " ... unless they contain at least one capital letter
-"nnoremap <esc> :noh<return><esc>
