@@ -41,12 +41,33 @@ function put_spacing() {
                 echo $spacing
 }
 
+ARROWCOLOR="$fg[green]"
+
+function zle-keymap-select {
+if [ $ARROWCOLOR != "$fg[red]" ]; then ARROWCOLOR="$fg[red]"; else ARROWCOLOR="$fg[green]"; fi
+    zle reset-prompt
+    zle -N redisplay
+}
+
+function zle-line-init {
+    ARROWCOLOR="$fg[green]"
+    zle reset-prompt
+    zle -N redisplay
+}
+
+function get_arrowcolor() {
+    echo "$ARROWCOLOR→ $reset_color"
+}
+
 function precmd() {
     print -rP '
 $fg[green]%n%{$reset_color%}@$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info) $(battery_charge)'
 }
 
-PROMPT='%{$reset_color%}→ '
+zle -N zle-keymap-select
+zle -N zle-line-init
+
+PROMPT='$(get_arrowcolor)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
