@@ -43,3 +43,8 @@ export TODO=~/Dropbox/Notes/todo.txt
 function t() { if [ $# -eq "0" ]; then cat $TODO; else echo "$@" >> $TODO; fi }
 
 function tt() { sed -i -e "/$*/d" $TODO; }
+
+export TERM="xterm-256color"
+# alias subl ="nocorrect subl"
+# alias tmux ="nocorrect tmux"
+alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g $*'
