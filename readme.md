@@ -1,0 +1,3 @@
+Just a dump of my dotfiles.
+Some of these will be customised only for my systems and to work across OSX, Windows and Linux installs.
+Some may not work at all...
