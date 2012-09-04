@@ -29,8 +29,8 @@ set directory=~/.vim/swaps
 set nobackup
 
 " Spellcheck on
-set spell
-set spelllang=en
+" set spell
+" set spelllang=en
 
 " Larger windows window
 "if has("windows")
