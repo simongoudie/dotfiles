@@ -1,2 +1,0 @@
-source ~/Dropbox/Programs/dotfiles/vimrc
-source ~/Documents/Dropbox/Programs/dotfiles/vimrc
