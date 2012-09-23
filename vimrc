@@ -169,3 +169,6 @@ set hlsearch       " highlight matches
 set incsearch      " incremental searching
 set ignorecase     " searches are case insensitive...
 set smartcase      " ... unless they contain at least one capital letter
+
+" Markdown
+nmap <leader>m :%!/usr/local/bin/Markdown.pl --html4tags <cr>
