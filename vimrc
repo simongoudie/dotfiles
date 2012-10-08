@@ -39,6 +39,7 @@ set nobackup
 
 " Open/load global vimrc
 nmap <silent> <leader>v <C-w><C-s><C-l>:e $DROPBOX/Programs/dotfiles/vimrc<CR>
+nmap <silent> <leader>V <C-w><C-s><C-l>:e ~/dotfiles/vimrc<CR>
 nmap <silent> <leader>s :so $MYVIMRC<CR>
 
 " Open Markdown reference file
