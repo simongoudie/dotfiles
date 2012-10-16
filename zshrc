@@ -48,3 +48,5 @@ export TERM="xterm-256color"
 # alias subl ="nocorrect subl"
 # alias tmux ="nocorrect tmux"
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g $*'
+
+bindkey '^R' history-incremental-search-backward
