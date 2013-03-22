@@ -173,6 +173,8 @@ set smartcase      " ... unless they contain at least one capital letter
 
 " Markdown
 nmap <leader>M :%!/usr/local/bin/Markdown.pl --html4tags <cr>
+nmap <leader>m :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 
 " Save as superuser
 nmap <leader>W :w !sudo tee %<CR>
+nmap <leader>w :w !sudo tee %<CR>
