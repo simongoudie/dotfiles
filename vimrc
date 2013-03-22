@@ -87,8 +87,8 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
-"nnoremap J <C-w>j<C-w>_
-"nnoremap K <C-w>k<C-w>_
+" nnoremap J <C-w>j<C-w>_
+" nnoremap K <C-w>k<C-w>_
 " nnoremap H <C-w>h<C-w>_
 " nnoremap L <C-w>L<C-w>_
 
@@ -172,4 +172,7 @@ set ignorecase     " searches are case insensitive...
 set smartcase      " ... unless they contain at least one capital letter
 
 " Markdown
-nmap <leader>m :%!/usr/local/bin/Markdown.pl --html4tags <cr>
+nmap <leader>M :%!/usr/local/bin/Markdown.pl --html4tags <cr>
+
+" Save as superuser
+nmap <leader>W :w !sudo tee %<CR>

@@ -49,7 +49,22 @@ export TERM="xterm-256color"
 # alias tmux ="nocorrect tmux"
 alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g $*'
 
+# fixes rake
+alias rake='noglob rake'
+
 bindkey '^R' history-incremental-search-backward
+
+# Clip script
+
+function clip() {
+    type=`file "$1"|grep -c text`
+    if [ $type -gt 0 ]; then
+        cat "$@"|pbcopy
+        echo "Contents of $1 are in the clipboard."
+    else
+        echo "File \"$1\" is not plain text."
+    fi
+}
 
 # MOTD script
 # let upSeconds="$(/usr/bin/cut -d. -f1 /proc/uptime)"

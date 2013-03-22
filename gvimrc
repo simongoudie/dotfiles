@@ -10,3 +10,5 @@ if has ("gui_running")
   colorscheme solarized
   set cursorline
 endif
+
+set columns=100
