@@ -178,3 +178,9 @@ nmap <leader>m :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 " Save as superuser
 nmap <leader>W :w !sudo tee %<CR>
 nmap <leader>w :w !sudo tee %<CR>
+
+" map control-backspace to delete the previous word
+:imap <C-BS> <C-W>
+
+" pickup md files as markdown
+au BufRead,BufNewFile *.md set filetype=markdown
