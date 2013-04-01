@@ -7,24 +7,17 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="rex"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -40,11 +33,10 @@ bindkey -v
 
 # rough fix for sudo autocorrect annoyingness
 alias sudo='nocorrect sudo'
+alias ag='nocorrect ag'
 
 export TODO=~/Dropbox/Notes/todo.txt
-
 function t() { if [ $# -eq "0" ]; then cat $TODO; else echo "$@" >> $TODO; fi }
-
 function tt() { sed -i -e "/$*/d" $TODO; }
 
 export TERM="xterm-256color"
@@ -57,8 +49,14 @@ alias rake='noglob rake'
 
 bindkey '^R' history-incremental-search-backward
 
-# Clip script
+# Other aliases
+# Copy pwd to clipboard
+alias cpwd='pwd|tr -d "\n"|pbcopy'
 
+# Copy last output to clipboard
+alias cl="fc -e -|pbcopy"
+
+# Clip script
 function clip() {
     type=`file "$1"|grep -c text`
     if [ $type -gt 0 ]; then
