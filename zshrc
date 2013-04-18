@@ -10,6 +10,8 @@ ZSH_THEME="rex"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
+alias stonesoup="ssh joshua@crawl.akrasiac.org"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
