@@ -36,6 +36,7 @@ bindkey -v
 # rough fix for sudo autocorrect annoyingness
 alias sudo='nocorrect sudo'
 alias ag='nocorrect ag'
+alias python3='nocorrect python3'
 
 export TODO=~/Dropbox/Notes/todo.txt
 function t() { if [ $# -eq "0" ]; then cat $TODO; else echo "$@" >> $TODO; fi }

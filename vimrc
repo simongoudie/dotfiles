@@ -83,14 +83,10 @@ inoremap <c-up> <C-W>k<C-W>_
 inoremap <c-down> <C-W>j<C-W>_
 
 " Ctrl and shift move keys to move between buffers
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-H> <C-W>h<C-W>_
-map <C-L> <C-W>l<C-W>_
-" nnoremap J <C-w>j<C-w>_
-" nnoremap K <C-w>k<C-w>_
-" nnoremap H <C-w>h<C-w>_
-" nnoremap L <C-w>L<C-w>_
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+map <C-L> :tabn<CR>
+map <C-H> :tabp<CR>
 
 " Change where splits appear
 set splitbelow
