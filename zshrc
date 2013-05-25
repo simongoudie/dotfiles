@@ -30,6 +30,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# Remap j k for history search
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
 export EDITOR="vim"
 bindkey -v
 
