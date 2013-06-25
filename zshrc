@@ -63,6 +63,23 @@ alias cpwd='pwd|tr -d "\n"|pbcopy'
 # Copy last output to clipboard
 alias cl="fc -e -|pbcopy"
 
+# Output number of todos
+function todocount(){
+#  if (( $+commands[td] ))
+#    then
+      num=$(echo $(td ls | wc -l))
+      let todos=num-2
+      if [ $todos != 0 ]
+        then
+          echo "$todos"
+        else
+          echo ""
+        fi
+#    else
+#      echo ""
+#  fi
+}
+
 # Clip script
 function clip() {
     type=`file "$1"|grep -c text`

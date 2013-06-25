@@ -24,17 +24,17 @@ function put_spacing() {
             git=0
         fi
 
-    local bat=$(battery_charge)
+        local bat=$(battery_charge)
         if [ ${#bat} != 0 ]; then
             ((bat = ${#bat} - 18))
             else
                bat=0
         fi
 
-    local termwidth
-        (( termwidth = ${COLUMNS} - 9 - ${#HOST} - ${#$(get_pwd)} - ${bat} - ${git} - 5 ))
+        local termwidth
+        (( termwidth = ${COLUMNS} - 3 - ${#HOST} - ${#$(get_pwd)} - ${bat} - ${git} ))
 
-    local spacing=""
+        local spacing=""
         for i in {1..$termwidth}; do
             spacing="${spacing} " 
                 done
@@ -59,13 +59,9 @@ function get_arrowcolor() {
     echo "$ARROWCOLOR→ $reset_color"
 }
 
-function show_todos() {
-    echo "$fg[yellow]($(todocount)td)$fg[cyan]"
-}
-
 function precmd() {
     print -rP '
-$fg[green]%n%{$reset_color%}@$fg[cyan]%m$(show_todos): $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info) $(battery_charge)'
+$fg[green]%n%{$reset_color%}@$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info) $(battery_charge)'
 }
 
 zle -N zle-keymap-select
