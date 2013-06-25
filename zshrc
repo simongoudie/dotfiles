@@ -77,7 +77,7 @@ function todocount(){
         then
           echo "$todos"
         else
-          echo ""
+          echo "0"
         fi
 #    else
 #      echo ""
