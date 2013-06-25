@@ -42,7 +42,11 @@ alias sudo='nocorrect sudo'
 alias ag='nocorrect ag'
 alias python3='nocorrect python3'
 
-export TODO=~/Dropbox/Notes/todo.txt
+if ls ~/Dropbox/Notes/todo.txt &> /dev/null 2>&1; then
+   export TODO=~/Dropbox/Notes/todo.txt
+else
+   export TODO=~/todo.txt
+fi
 function t() { if [ $# -eq "0" ]; then cat $TODO; else echo "$@" >> $TODO; fi }
 function tt() { sed -i -e "/$*/d" $TODO; }
 
@@ -67,8 +71,8 @@ alias cl="fc -e -|pbcopy"
 function todocount(){
 #  if (( $+commands[td] ))
 #    then
-      num=$(echo $(td ls | wc -l))
-      let todos=num-2
+      num=$(echo $(t | wc -l))
+      let todos=num #-2
       if [ $todos != 0 ]
         then
           echo "$todos"
