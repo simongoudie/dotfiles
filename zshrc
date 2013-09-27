@@ -37,6 +37,11 @@ bindkey -M vicmd 'j' history-substring-search-down
 export EDITOR="vim"
 bindkey -v
 
+#Esc-v edits command line in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # rough fix for sudo autocorrect annoyingness
 alias sudo='nocorrect sudo'
 alias ag='nocorrect ag'
