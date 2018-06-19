@@ -1,7 +1,11 @@
 " Simon's common vimrc file - for Mac, Windows and *nix
 
 " Start pathogen
+set nocp
 execute pathogen#infect()
+
+set background=dark
+colorscheme solarized
 
 " Set $DROPBOX directory
 let $DROPBOX = "~/Dropbox"
