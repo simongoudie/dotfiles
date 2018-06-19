@@ -1,7 +1,7 @@
 " Simon's common vimrc file - for Mac, Windows and *nix
 
 " Start pathogen
-call pathogen#infect()
+execute pathogen#infect()
 
 " Set $DROPBOX directory
 let $DROPBOX = "~/Dropbox"
@@ -17,6 +17,9 @@ set statusline=%F%m%r%h%w\ [%Y]\ [B%n]\ [Line:%l/%L]\ [Col:%c%V]
 
 " Plugin stuff
 filetype plugin indent on       " load file type plugins + indentation
+
+" Language specific tabs
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " Set leader to comma
 let mapleader=","

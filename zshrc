@@ -41,6 +41,7 @@ bindkey -v
 alias sudo='nocorrect sudo'
 alias ag='nocorrect ag'
 alias python3='nocorrect python3'
+alias vagrant='nocorrect vagrant'
 
 if ls ~/Dropbox/Notes/todo.txt &> /dev/null 2>&1; then
    export TODO=~/Dropbox/Notes/todo.txt
