@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME//.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -7,10 +7,13 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="rex"
 
+ZSH_DISABLE_COMPFIX="true"
+
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias stonesoup="ssh joshua@crawl.akrasiac.org"
+
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
